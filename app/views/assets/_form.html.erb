@@ -1,0 +1,29 @@
+<%= form_for(@asset) do |f| %>
+  <% if @asset.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@asset.errors.count, "error") %> prohibited this asset from being saved:</h2>
+
+      <ul>
+      <% @asset.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :asset_title %><br>
+    <%= f.text_field :asset_title %>
+  </div>
+  <div class="field">
+    <%= f.label :asset %><br>
+    <%= f.file_field :asset %>
+    <% if f.object.asset_stored? %>
+        <%= image_tag f.object.asset.thumb('150x150').url %>
+        <em>Current image</em>
+    <% end %>
+  </div>
+  <div class="actions">
+    <%= f.submit "save" %>
+  </div>
+<% end %>

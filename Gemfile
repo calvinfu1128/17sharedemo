@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# Dragonfly for file upload
+gem 'dragonfly', '~> 1.0.7'
 # Sorcery for authentication
 gem 'sorcery', '~> 0.9.0'
 # Use figaro to protect sensitive data

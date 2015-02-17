@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :assets
+
   get 'oauths/oauth'
 
   get 'oauths/callback'
