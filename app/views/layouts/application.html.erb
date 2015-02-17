@@ -17,6 +17,7 @@
       <%= link_to "Login", :login %>
     <% end %>
   </div>
+  <%= link_to 'Login with Facebook', auth_at_provider_path(:provider => :facebook) %>
   <div>
     <p id="notice"><%= flash[:notice] %></p>
     <p id="alert"><%= flash[:alert] %></p>
