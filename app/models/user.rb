@@ -7,11 +7,8 @@ class User < ActiveRecord::Base
   validates :password, confirmation: true
   validates :password_confirmation, presence: true
   validates :email, uniqueness: true
-  validates :first_name, presence: true
-  validates :last_name, presence: true
 
   has_many :authentications, :dependent => :destroy
   accepts_nested_attributes_for :authentications
   has_many :assets, :dependent => :destroy
-
 end
