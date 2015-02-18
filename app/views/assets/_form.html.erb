@@ -19,7 +19,7 @@
     <%= f.label :asset %><br>
     <%= f.file_field :asset %>
     <% if f.object.asset_stored? %>
-        <%= image_tag f.object.asset.thumb('150x150').url %>
+        <%= image_tag f.object.asset.url %>
         <em>Current image</em>
     <% end %>
   </div>

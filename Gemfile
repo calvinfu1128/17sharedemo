@@ -51,4 +51,6 @@ end
 group :production do
   # Use MySQL as production database
   gem 'mysql2', '~> 0.3.17'
+  # Use rack cache for improve performance for dragonfly
+  gem 'rack-cache', :require => 'rack/cache'
 end

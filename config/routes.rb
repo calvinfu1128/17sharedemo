@@ -15,6 +15,10 @@ Rails.application.routes.draw do
     get "oauth/callback" => "oauths#callback" # for use with Github, Facebook
     get "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
 
+    get "image" => Dragonfly.app.endpoint { |params, app|
+    app.fetch_file("some/dir/#{params[:file]}").thumb(params[:size])
+    }
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
