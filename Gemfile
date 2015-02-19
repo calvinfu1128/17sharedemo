@@ -52,6 +52,7 @@ group :development, :test do
 end
 
 group :production do
+  gem 'pg'
   gem 'rails_12factor'
   # Use MySQL as production database
   gem 'mysql2', '~> 0.3.17'
