@@ -4,6 +4,8 @@ source 'https://rubygems.org'
 gem 'dragonfly', '~> 1.0.7'
 # Sorcery for authentication
 gem 'sorcery', '~> 0.9.0'
+# Pundit for authorization
+gem 'pundit', '~> 0.3.0'
 # Use figaro to protect sensitive data
 gem 'figaro', '~> 1.1.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
