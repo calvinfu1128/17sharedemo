@@ -1,20 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Tutorial</title>
+    <title>17Share</title>
       <%= stylesheet_link_tag    "application" %>
+      <%= stylesheet_link_tag    "custom" %>
       <%= javascript_include_tag "application" %>
       <%= csrf_meta_tags %>
-      <script type="text/javascript">
-      (function() {
-        $(function() {
-          if (window.location.hash && window.location.hash === '#_=_') {
-            window.location.hash = '';
-            return history.pushState('', document.title, window.location.pathname);
-          }
-        });
-      }).call(this);
-</script>
+      <meta name=“viewport” value=“width=device-width, initial-scale=1”>
   </head>
   <body>
 
@@ -34,6 +26,17 @@
     <p id="alert"><%= flash[:alert] %></p>
   </div>
   <%= yield %>
+
+  <script type="text/javascript">
+      (function() {
+        $(function() {
+          if (window.location.hash && window.location.hash === '#_=_') {
+            window.location.hash = '';
+            return history.pushState('', document.title, window.location.pathname);
+          }
+        });
+      }).call(this);
+  </script>
 
   </body>
 </html>
