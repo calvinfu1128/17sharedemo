@@ -1,10 +1,174 @@
 body {
-    font-family: 'Quicksand';
-    letter-spacing: -0.03em;
+    font-family: 'Lato', sans-serif;
+    color: #556270;
+    margin: 0 auto;
 }
 
+@font-face {
+  font-family: 'Quicksand';
+  src:url('Quicksand-Light.otf');
+  font-weight: normal;
+  font-style: normal;
+}
 
 /* for responsive purpose */
 img, embed, object, video {
     max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: #556270;
+}
+
+li {
+    list-style: none;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    top: 0;
+    left: 0;
+    display: flex;
+    order: 1;
+    z-index: 999;
+}
+
+.top-bar {
+    display: flex;
+    background: #556270;
+    min-width: 100%;
+    height: 30px;
+    position: relative;
+    color: #fff;
+}
+
+.top-bar-left {
+    display: flex;
+    order: 1;
+    align-items: center;
+    justify-content: flex-start;
+    width: 20%;
+}
+
+.top-bar-right {
+    display: flex;
+    order: 2;
+    align-items: center;
+    justify-content: flex-end;
+    width: 80%;
+    position: relative;
+    right: 10px;
+    a {
+        font-size: 0.9em;
+        color: #fff;
+    }
+}
+
+.navigation {
+    display: flex;
+    order: 2;
+    background: #fff;
+    min-width: 100%;
+    height: 70px;
+    position: relative;
+    top: 30px;
+    left: -100%;
+}
+
+.logo-area {
+    display: flex;
+    order: 1;
+    align-items: center;
+    justify-content: flex-start;
+    width: 70%;
+}
+
+.logo {
+    display: flex;
+    order: 1;
+    width: 60px;
+    img {
+        max-height: 50px;
+        min-width: 50px;
+        position: relative;
+        left: 5px;
+    }
+}
+
+.name {
+    display: flex;
+    order: 2;
+    width: 160px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 2.1em;
+    letter-spacing: -0.02em;
+    position: relative;
+    left: -5px;
+    a {
+        color: #556270;
+    }
+}
+
+.menu {
+    display: flex;
+    order: 2;
+    align-items: center;
+    justify-content: flex-end;
+    width: 30%;
+    position: relative;
+    right: 10px;
+}
+
+.normal-menu {
+    display: none;
+    visibility: hidden;
+}
+
+.bar-menu {
+    a {
+        color: #556270;
+    }
+}
+
+.content {
+    width: 100%;
+    height: 700px;
+    background: #ff6b6b;
+    display: flex;
+    order: 2;
+    color: #000;
+    position: relative;
+    top: 100px;
+}
+
+.footer {
+    width: 100%;
+    height: 275px;
+    background: #556270;
+    display: flex;
+    order: 3;
+    color: #fff;
+    position: relative;
+    top: 100px;
+
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .normal-menu {
+        display: block;
+        visibility: visible;
+    }
+    .bar-menu {
+        display: none;
+        visibility: hidden;
+    }
 }

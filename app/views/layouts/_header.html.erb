@@ -1,0 +1,45 @@
+<header class="header">
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <!--breadcrumb-->
+        </div>
+        <div class="top-bar-right">
+            <div id="nav">
+              <% if current_user %>
+                <%= link_to "上載照片", assets_path %>
+                <%= link_to "修改資料", edit_user_path(current_user.id) %>
+                <%= link_to "登出", :logout, method: :post %>
+              <% else %>
+                <%= link_to "登記", new_user_path %> |
+                <%= link_to "登入", :login %>
+              <% end %>
+            </div>
+            <div>
+              <p id="notice"><%= flash[:notice] %></p>
+              <p id="alert"><%= flash[:alert] %></p>
+            </div>
+        </div>
+    </div>
+    <div class="navigation">
+        <div class="logo-area">
+            <div class="logo">
+                <a href="#"><%= image_tag "logo_150x150.png" %></a>
+            </div>
+            <div class="name">
+                <a href="#">17Share</a>
+            </div>
+
+        </div>
+        <div class="menu">
+            <div class="normal-menu">
+                <ul>
+                    <li><a href="#">婚紗攝影</a></li>
+                    <li><a href="#">小小Pin</a></li>
+                </ul>
+            </div>
+            <div class="bar-menu">
+                <a href="#" class="bar-icon"><i class="fa fa-bars fa-2x"></i></a>
+            </div>
+        </div>
+    </div>
+</header>

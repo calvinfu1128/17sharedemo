@@ -4,38 +4,31 @@
     <title>17Share</title>
       <%= stylesheet_link_tag    "application" %>
       <%= stylesheet_link_tag    "custom" %>
-      <%= javascript_include_tag "application" %>
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+      <link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
       <%= csrf_meta_tags %>
       <meta name=“viewport” value=“width=device-width, initial-scale=1”>
   </head>
   <body>
-
-  <div id="nav">
-    <% if current_user %>
-      <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
-      <%= link_to "Logout", :logout, method: :post %>
-    <% else %>
-      <%= link_to "Register", new_user_path %> |
-      <%= link_to "Login", :login %>
-    <% end %>
-  </div>
-  <%= link_to 'Login with Facebook', auth_at_provider_path(:provider => :facebook) %>
-  <%= link_to "Upload photos", assets_path %>
-  <div>
-    <p id="notice"><%= flash[:notice] %></p>
-    <p id="alert"><%= flash[:alert] %></p>
+  <%= render 'layouts/header' %>
+  <div class="content">
+      <%= link_to "Upload photos", assets_path %>
+      <div>
+        <p id="notice"><%= flash[:notice] %></p>
+        <p id="alert"><%= flash[:alert] %></p>
+      </div>
   </div>
   <%= yield %>
 
-  <script type="text/javascript">
-      (function() {
-        $(function() {
-          if (window.location.hash && window.location.hash === '#_=_') {
-            window.location.hash = '';
-            return history.pushState('', document.title, window.location.pathname);
-          }
-        });
-      }).call(this);
+  <%= render 'layouts/footer' %>
+
+  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "functions" %>
+  <script src="jquery.slicknav.min.js"></script>
+  <script>
+    $(function(){
+        $('#menu').slicknav();
+    });
   </script>
 
   </body>
