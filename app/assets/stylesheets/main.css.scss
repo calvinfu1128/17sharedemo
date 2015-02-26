@@ -1,3 +1,5 @@
+@import "font-awesome";
+
 body {
     font-family: 'Lato', sans-serif;
     color: #556270;
@@ -309,12 +311,5 @@ li {
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-    .normal-menu {
-        display: block;
-        visibility: visible;
-    }
-    .bar-menu {
-        display: none;
-        visibility: hidden;
-    }
+
 }

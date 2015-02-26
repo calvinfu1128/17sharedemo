@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 ruby "2.2.0"
 
+# For Font Awesome display
+gem 'font-awesome-rails', '~> 4.3.0.0'
 # Dragonfly for file upload
 gem 'dragonfly', '~> 1.0.7'
 # Sorcery for authentication
