@@ -51,7 +51,7 @@ li {
     display: flex;
     background: #556270;
     min-width: 100%;
-    height: 30px;
+    height: 40px;
     position: relative;
     color: #fff;
 }
@@ -100,7 +100,7 @@ li {
     min-width: 100%;
     height: 70px;
     position: relative;
-    top: 30px;
+    top: 40px;
     left: -100%;
 }
 
@@ -158,7 +158,7 @@ li {
     background: rgba(85,98,112,0.92);
     width: 100%;
     position: fixed;
-    top: 100px;
+    top: 110px;
     left: 0;
     ul {
         left: 0;
@@ -193,14 +193,21 @@ li {
 
 .content {
     width: 100%;
+    display: flex;
+    order: 2;
+    flex-direction: column;
+    position: relative;
+    top: 110px;
+}
+
+.mega-slider {
+    display: flex;
+    order: 1;
+    flex-wrap: wrap;
+    width: 100%;
     height: 230px;
     background: #ff6b6b;
     color: #fff;
-    display: flex;
-    order: 2;
-    flex-wrap: wrap;
-    position: relative;
-    top: 100px;
 }
 
 .slider-icon {
@@ -267,6 +274,16 @@ li {
     justify-content: center;
 }
 
+.photo-grid {
+    display: flex;
+    order: 2;
+    position: relative;
+    top: 110px;
+    width: 100%;
+    background: #ccc;
+
+}
+
 .footer {
     width: 100%;
     height: 120px;
@@ -276,7 +293,7 @@ li {
     flex-direction: column;
     color: #cedae8;
     position: relative;
-    top: 100px;
+    top: 110px;
     font-size: 0.8em;
 }
 
