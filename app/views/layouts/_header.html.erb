@@ -4,20 +4,16 @@
             <!--breadcrumb-->
         </div>
         <div class="top-bar-right">
-            <div id="nav">
+            <ul>
               <% if current_user %>
-                <%= link_to "上載照片", assets_path %>
-                <%= link_to "修改資料", edit_user_path(current_user.id) %>
-                <%= link_to "登出", :logout, method: :post %>
+                <li><%= link_to "上載照片", assets_path %></li>
+                <li><%= link_to "修改資料", edit_user_path(current_user.id) %></li>
+                <li><%= link_to "登出", :logout, method: :post %></li>
               <% else %>
-                <%= link_to "登記", new_user_path %> |
-                <%= link_to "登入", :login %>
+                <li><%= link_to "登記", new_user_path %></li>
+                <li><%= link_to "登入", :login %></li>
               <% end %>
-            </div>
-            <div>
-              <p id="notice"><%= flash[:notice] %></p>
-              <p id="alert"><%= flash[:alert] %></p>
-            </div>
+            </ul>
         </div>
     </div>
     <div class="navigation">
@@ -30,16 +26,16 @@
             </div>
 
         </div>
-        <div class="menu">
-            <div class="normal-menu">
+        <div class="mobile-nav menu">
+             <div class="menu-btn" id="menu-btn">
+                <i class="fa fa-bars fa-2x"></i>
+             </div>
+             <div class="responsive-menu">
                 <ul>
-                    <li><a href="#">婚紗攝影</a></li>
-                    <li><a href="#">小小Pin</a></li>
+                   <a href="#"><li>婚紗攝影</li></a>
+                   <a href="#"><li>小小Pin</li></a>
                 </ul>
-            </div>
-            <div class="bar-menu">
-                <a href="#" class="bar-icon"><i class="fa fa-bars fa-2x"></i></a>
-            </div>
+             </div>
         </div>
     </div>
 </header>
