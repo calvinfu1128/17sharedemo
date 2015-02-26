@@ -11,14 +11,14 @@
   </head>
   <body>
   <%= render 'layouts/header' %>
-  <div class="content">
-      <%= link_to "Upload photos", assets_path %>
-      <div>
-        <p id="notice"><%= flash[:notice] %></p>
-        <p id="alert"><%= flash[:alert] %></p>
-      </div>
-  </div>
+  <%= render 'layouts/main' %>
   <%= yield %>
+
+  <%= link_to "Upload photos", assets_path %>
+  <div>
+    <p id="notice"><%= flash[:notice] %></p>
+    <p id="alert"><%= flash[:alert] %></p>
+  </div>
 
   <%= render 'layouts/footer' %>
 
