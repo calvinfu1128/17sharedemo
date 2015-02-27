@@ -21,6 +21,7 @@ img, embed, object, video {
 a {
     text-decoration: none;
     color: #556270;
+    outline: none;
 }
 
 li {
@@ -295,6 +296,9 @@ li {
     position: relative;
     top: 110px;
     font-size: 0.8em;
+    a {
+        color: #cedae8;
+    }
 }
 
 .social-icons {
@@ -302,11 +306,8 @@ li {
     order: 1;
     align-items: center;
     justify-content: center;
-    height: 50px;
+    height: 60px;
     font-size: 1.3em;
-    a {
-        color: #cedae8;
-    }
 }
 
 .sitemap {
@@ -314,7 +315,7 @@ li {
     order: 2;
     align-items: center;
     justify-content: center;
-    height: 35px;
+    height: 30px;
 }
 
 .copyright {
@@ -322,9 +323,48 @@ li {
     order: 3;
     align-items: center;
     justify-content: center;
-    height: 35px;
+    height: 30px;
 }
 
+/* modal style */
+.ui-dialog {
+    background: #556270 !important;
+    width: 100% !important;
+    border-radius: 0;
+    border: 0;
+    padding: 0;
+    font-size: 0.9em;
+    top: 15% !important;
+    z-index: 99999;
+}
+
+.ui-dialog-content {
+    background: #556270 !important;
+    color: #fff;
+}
+
+.ui-dialog-titlebar {
+    background: #556270;
+    color: #fff;
+    border: 0 !important;
+    border-bottom: 1px solid #333 !important;
+    border-radius: 0;
+    text-align: center;
+}
+
+.ui-dialog-titlebar-close {
+    background: #556270 !important;
+    color: #fff !important;
+}
+
+.ui-widget-overlay {
+    background: rgba(0,0,0,0.95);
+}
+
+/* remove jQuery UI blue border */
+*:focus {
+    outline: none;
+}
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {

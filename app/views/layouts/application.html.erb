@@ -24,7 +24,7 @@
 
   <%= javascript_include_tag "application" %>
 
-
+  <!-- mobile menu -->
   <script type="text/javascript">
       jQuery(function($){
                $( '.menu-btn' ).click(function(){
@@ -32,7 +32,7 @@
                })
           })
   </script>
-
+  <!-- remove facebook ugly url -->
   <script type="text/javascript">
       (function() {
         $(function() {
@@ -43,8 +43,36 @@
         });
       }).call(this);
   </script>
+  <!-- dialog modal -->
+  <script>
+      $( "#signup-form" ).dialog({ autoOpen: false });
+      $( "#signup" ).click(function() {
+        $( "#signup-form" ).dialog( "open" );
+      });
+  </script>
 
-
+  <script>
+      $( "#login-form" ).dialog({ autoOpen: false });
+      $( "#login" ).click(function() {
+        $( "#login-form" ).dialog( "open" );
+      });
+  </script>
+  <script>
+      $( "#signup-form" ).dialog({
+        "resize", "auto"
+      });
+      $( "#login-form" ).dialog({
+        "resize", "auto"
+      });
+  </script>
+  <script>
+      $( "#signup-form" ).dialog({
+        modal: true
+      });
+      $( "#login-form" ).dialog({
+        modal: true
+      });
+  </script>
 
   </body>
 </html>

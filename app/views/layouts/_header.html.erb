@@ -10,8 +10,10 @@
                 <li><%= link_to "修改資料", edit_user_path(current_user.id) %></li>
                 <li><%= link_to "登出", :logout, method: :post %></li>
               <% else %>
-                <li><%= link_to "登記", new_user_path %></li>
-                <li><%= link_to "登入", :login %></li>
+                <li><a href="#" id="signup">登記</a></li>
+                <li><a href="#" id="login">登入</a></li>
+                <!--<li><%= link_to "登記", new_user_path, :id => "register" %></li>
+                    <li><%= link_to "登入", :login, :id => "login" %></li>-->
               <% end %>
             </ul>
         </div>
@@ -39,3 +41,33 @@
         </div>
     </div>
 </header>
+
+<!-- signup form -->
+    <div id="signup-form" title="帳號登記">
+        <form>
+            <lable for="last-name">姓：</label>
+            <input type="text" id="last-name" required placeholder="中英皆可" autofocus /><br /><br />
+            <lable for="first-name">名：</label>
+            <input type="text" id="first-name" required placeholder="中英皆可" /><br /><br />
+            <lable for="email">電郵地址：</label>
+            <input type="email" id="email" required placeholder="收取確認電郵" /><br /><br />
+            <lable for="password">密碼：</label>
+            <input type="password" id="password" required placeholder="最少八位字元" /><br /><br />
+            <lable for="cfm-password">確認密碼：</label>
+            <input type="password" id="cfm-password" required placeholder="同上" /><br /><br />
+            <button>登記</button>&nbsp;或<br /><br />
+            <button>使用Facebook登記</button>
+        </form>
+    </div>
+
+<!--login form -->
+    <div id="login-form" title="帳號登入">
+        <form>
+            <lable for="email">電郵地址：</label>
+            <input type="email" id="email" required autofocus /><br /><br />
+            <lable for="password">密碼：</label>
+            <input type="password" id="password" required /><br /><br />
+            <button>登入</button>&nbsp;或<br /><br />
+            <button>使用Facebook登入</button>
+        </form>
+    </div>
