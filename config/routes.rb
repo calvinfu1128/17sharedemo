@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'pages#index'
+  root 'users#new'
   resources :pages
   resources :assets
   resources :user_sessions
