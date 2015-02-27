@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 ruby "2.2.0"
 
+# i18n internationalization support
+gem 'rails-i18n', '~> 4.0.4'
 # For Font Awesome display
 gem 'font-awesome-rails', '~> 4.3.0.0'
 # Dragonfly for file upload

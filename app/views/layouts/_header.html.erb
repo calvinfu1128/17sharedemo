@@ -1,19 +1,19 @@
 <header class="header">
     <div class="top-bar">
         <div class="top-bar-left">
-            <!--breadcrumb-->
+            <%= notice %>
         </div>
         <div class="top-bar-right">
             <ul>
               <% if current_user %>
-                <li><%= link_to "上載", assets_path %></li>
+                <li><%= link_to "上載", new_asset_path %></li>
                 <li><%= link_to "帳號", edit_user_path(current_user.id) %></li>
                 <li><%= link_to "登出", :logout, method: :post %></li>
               <% else %>
-                <li><a href="#" id="signup">登記</a></li>
-                <li><a href="#" id="login">登入</a></li>
-                <!--<li><%= link_to "登記", new_user_path, :id => "register" %></li>
-                    <li><%= link_to "登入", :login, :id => "login" %></li>-->
+                <!--<li><a href="#" id="signup">登記</a></li>
+                <li><a href="#" id="login">登入</a></li>-->
+                <li><%= link_to "登記", :signup, html: { id: "signup" } %></li>
+                <li><%= link_to "登入", :login, html: { id: "login" } %></li>
               <% end %>
             </ul>
         </div>
@@ -43,3 +43,4 @@
 </header>
 
 <%= render 'user_sessions/form' %>
+<%= render 'users/form' %>
