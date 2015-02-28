@@ -6,7 +6,7 @@
         <div class="top-bar-right">
             <ul>
               <% if current_user %>
-                <li><%= link_to "上載", new_asset_path %></li>
+                <li><%= link_to "上載", :upload, html: { id: "upload" } %></li>
                 <li><%= link_to "帳號", edit_user_path(current_user.id) %></li>
                 <li><%= link_to "登出", :logout, method: :post %></li>
               <% else %>
@@ -21,10 +21,10 @@
     <div class="navigation">
         <div class="logo-area">
             <div class="logo">
-                <%= link_to(image_tag("logo_150x150.png"), pages_path) %>
+                <%= link_to(image_tag("logo_150x150.png"), root_path) %>
             </div>
             <div class="name text-shadow">
-                <%= link_to "17Share", pages_path %>
+                <%= link_to "17Share", root_path %>
             </div>
 
         </div>

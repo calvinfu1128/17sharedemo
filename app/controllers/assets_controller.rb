@@ -5,6 +5,7 @@ class AssetsController < ApplicationController
   # GET /assets.json
   def index
     @assets = Asset.all
+    @user = User.new
   end
 
   # GET /assets/1
@@ -15,6 +16,7 @@ class AssetsController < ApplicationController
   # GET /assets/new
   def new
     @asset = Asset.new
+    @user = User.new
   end
 
   # GET /assets/1/edit

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   get 'oauths/callback'
 
+    get 'upload' => 'assets#new', :as => :upload
     get 'signup' => 'users#new', :as => :signup
     get 'login' => 'user_sessions#new', :as => :login
     post 'logout' => 'user_sessions#destroy', :as => :logout
