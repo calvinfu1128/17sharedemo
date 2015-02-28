@@ -338,6 +338,9 @@ li {
     font-size: 0.9em;
     top: 15% !important;
     z-index: 99999;
+    a {
+        color: #fff;
+    }
 }
 
 .ui-dialog-content {
@@ -350,7 +353,7 @@ li {
 
 .ui-dialog-titlebar {
     background: #556270;
-    color: #fff;
+    color: #fff !important;
     border: 0 !important;
     border-bottom: 1px solid #333 !important;
     border-radius: 0;

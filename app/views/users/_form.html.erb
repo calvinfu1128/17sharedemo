@@ -30,8 +30,15 @@
      <%= f.label "確認密碼" %><br />
      <%= f.password_field :password_confirmation %>
   </div>
-  <div class="actions">
-    <%= f.submit "登記" %>
-  </div>
+  <% if logged_in? %>
+      <div class="actions">
+        <%= f.submit "修改" %>
+      </div>
+  <% else %>
+      <div class="actions">
+        <%= f.submit "登記" %>
+      </div>
+  <% end %>
+
   <%= link_to 'Facebook登入', auth_at_provider_path(:provider => :facebook) %>
 <% end %>
