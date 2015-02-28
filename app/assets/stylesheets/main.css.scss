@@ -55,6 +55,7 @@ li {
     height: 40px;
     position: relative;
     color: #fff;
+    font-size: 0.8em;
 }
 
 .top-bar-left {
@@ -63,6 +64,8 @@ li {
     align-items: center;
     justify-content: flex-start;
     width: 20%;
+    position: relative;
+    left: 10px;
 }
 
 .top-bar-right {
@@ -86,7 +89,6 @@ li {
         width: 45px;
     }
     a {
-        font-size: 0.8em;
         color: #fff;
     }
     a:hover {
@@ -341,6 +343,9 @@ li {
 .ui-dialog-content {
     background: #556270 !important;
     color: #fff;
+    input {
+        color: #556270;
+    }
 }
 
 .ui-dialog-titlebar {
