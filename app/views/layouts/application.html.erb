@@ -27,33 +27,58 @@
   <!-- mobile menu -->
   $(document).ready(function () {
       <script type="text/javascript">
-          jQuery(function($){
-                   $( '.menu-btn' ).click(function(){
-                   $('.responsive-menu').slideToggle('expand')
-                   })
-              })
+            jQuery(function($){
+            $( '.menu-btn' ).click(function(){
+                $('.responsive-menu').slideToggle('expand')
+                $('.menu-btn').addClass('btn-none')
+            })
+
+             $( '.close-btn' ).click(function(){
+                $('.responsive-menu').slideToggle('expand')
+                $('.menu-btn').removeClass('btn-none')
+            })
+            })
       </script>
       <script type="text/javascript">
-          jQuery(function($){
-                   $( '.signup-btn' ).click(function(){
-                   $('.signup-form').slideToggle('expand')
-                   })
-              })
+            jQuery(function($){
+            $( '.signup-btn' ).click(function(){
+                $('.signup-form').slideToggle('expand')
+                $('.signup-btn').addClass('btn-none')
+            })
+
+             $( '.close-signup-btn' ).click(function(){
+                $('.signup-form').slideToggle('expand')
+                $('.signup-btn').removeClass('btn-none')
+            })
+            })
       </script>
       <script type="text/javascript">
-          jQuery(function($){
-                   $( '.login-btn' ).click(function(){
-                   $('.login-form').slideToggle('expand')
-                   })
-              })
+            jQuery(function($){
+            $( '.login-btn' ).click(function(){
+                $('.login-form').slideToggle('expand')
+                $('.login-btn').addClass('btn-none')
+            })
+
+             $( '.close-login-btn' ).click(function(){
+                $('.login-form').slideToggle('expand')
+                $('.login-btn').removeClass('btn-none')
+            })
+            })
       </script>
       <script type="text/javascript">
-          jQuery(function($){
-                   $( '.upload-btn' ).click(function(){
-                   $('.upload-form').slideToggle('expand')
-                   })
-              })
+            jQuery(function($){
+            $( '.upload-btn' ).click(function(){
+                $('.upload-form').slideToggle('expand')
+                $('.upload-btn').addClass('btn-none')
+            })
+
+             $( '.close-upload-btn' ).click(function(){
+                $('.upload-form').slideToggle('expand')
+                $('.upload-btn').removeClass('btn-none')
+            })
+            })
       </script>
+
       <!-- remove facebook ugly url -->
       <script type="text/javascript">
           (function() {

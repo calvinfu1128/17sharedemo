@@ -38,6 +38,9 @@
                       <div class="actions">
                         <%= f.submit "上傳" %>
                       </div>
+                      <div>
+                        <%= button_tag "返回", type: 'button', class: 'close-upload-btn' %>
+                      </div>
                     <% end %>
                 </div>
                 <li>
@@ -79,6 +82,9 @@
                       <% if logged_in? %>
                           <div class="actions">
                             <%= f.submit "修改" %>
+                          </div>
+                          <div>
+                            <%= button_tag "返回", type: 'button', class: 'close-signup-btn' %>
                           </div>
                       <% else %>
                           <div class="actions">
@@ -135,6 +141,9 @@
                           <div class="actions">
                             <%= f.submit "登記" %>
                           </div>
+                          <div>
+                            <%= button_tag "返回", type: 'button', class: 'close-signup-btn' %>
+                          </div>
                       <% end %>
 
                       <%= link_to 'Facebook登入', auth_at_provider_path(:provider => :facebook) %>
@@ -159,6 +168,9 @@
                       </div>
                       <div class="actions">
                         <%= submit_tag "登入" %>
+                      </div>
+                      <div>
+                        <%= button_tag "返回", type: 'button', class: 'close-login-btn' %>
                       </div>
                       <%= link_to 'Facebook登入', auth_at_provider_path(:provider => :facebook) %>
                     <% end %>
@@ -187,6 +199,7 @@
                 <ul class="text-shadow">
                    <a href="#"><li>婚紗攝影</li></a>
                    <a href="#"><li>小小Pin</li></a>
+                   <a href="#" class="close-btn"><li>返回</li></a>
                 </ul>
              </div>
         </div>
