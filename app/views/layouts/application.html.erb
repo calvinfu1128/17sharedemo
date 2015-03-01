@@ -20,71 +20,73 @@
     <p id="notice"><%= flash[:notice] %></p>
     <p id="alert"><%= flash[:alert] %></p>
   </div>
-
   <%= render 'layouts/footer' %>
 
   <%= javascript_include_tag "application" %>
 
   <!-- mobile menu -->
-  <script type="text/javascript">
-      jQuery(function($){
-               $( '.menu-btn' ).click(function(){
-               $('.responsive-menu').slideToggle('expand')
-               })
-          })
-  </script>
-  <!-- remove facebook ugly url -->
-  <script type="text/javascript">
-      (function() {
-        $(function() {
-          if (window.location.hash && window.location.hash === '#_=_') {
-            window.location.hash = '';
-            return history.pushState('', document.title, window.location.pathname);
-          }
-        });
-      }).call(this);
-  </script>
-  <!-- dialog modal -->
-  <script>
-      $( "#signup-form" ).dialog({ autoOpen: false });
-      $( "#signup" ).click(function() {
-        $( "#signup-form" ).dialog( "open" );
-      });
-  </script>
-  <script>
-      $( "#login-form" ).dialog({ autoOpen: false });
-      $( "#login" ).click(function() {
-        $( "#login-form" ).dialog( "open" );
-      });
-  </script>
-  <script>
-      $( "#upload-form" ).dialog({ autoOpen: false });
-      $( "#upload" ).click(function() {
-        $( "#upload-form" ).dialog( "open" );
-      });
-  </script>
-  <script>
-      $( "#signup-form" ).dialog({
-        "resize", "auto"
-      });
-      $( "#login-form" ).dialog({
-        "resize", "auto"
-      });
-      $( "#upload-form" ).dialog({
-        "resize", "auto"
-      });
-  </script>
-  <script>
-      $( "#signup-form" ).dialog({
-        modal: true
-      });
-      $( "#login-form" ).dialog({
-        modal: true
-      });
-      $( "#upload-form" ).dialog({
-        modal: true
-      });
-  </script>
+  $(document).ready(function () {
+      <script type="text/javascript">
+          jQuery(function($){
+                   $( '.menu-btn' ).click(function(){
+                   $('.responsive-menu').slideToggle('expand')
+                   })
+              })
+      </script>
+      <!-- remove facebook ugly url -->
+      <script type="text/javascript">
+          (function() {
+            $(function() {
+              if (window.location.hash && window.location.hash === '#_=_') {
+                window.location.hash = '';
+                return history.pushState('', document.title, window.location.pathname);
+              }
+            });
+          }).call(this);
+      </script>
+      <!-- dialog modal -->
+      <script>
+          $( "#upload-form" ).dialog({ autoOpen: false });
+          $( "#upload" ).click(function() {
+            $( "#upload-form" ).dialog( "open" );
+          });
+      </script>
+      <script>
+          $( "#signup-form" ).dialog({ autoOpen: false });
+          $( "#signup" ).click(function() {
+            $( "#signup-form" ).dialog( "open" );
+          });
+      </script>
+      <script>
+          $( "#login-form" ).dialog({ autoOpen: false });
+          $( "#login" ).click(function() {
+            $( "#login-form" ).dialog( "open" );
+          });
+      </script>
+      <script>
+          $( "#upload-form" ).dialog({
+            "resize", "auto"
+          });
+          $( "#signup-form" ).dialog({
+            "resize", "auto"
+          });
+          $( "#login-form" ).dialog({
+            "resize", "auto"
+          });
+      </script>
+      <script>
+          $( "#upload-form" ).dialog({
+            modal: true
+          });
+          $( "#signup-form" ).dialog({
+            modal: true
+          });
+          $( "#login-form" ).dialog({
+            modal: true
+          });
+      </script>
+  });
+
 
   </body>
 </html>

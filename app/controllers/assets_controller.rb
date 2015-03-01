@@ -11,6 +11,7 @@ class AssetsController < ApplicationController
   # GET /assets/1
   # GET /assets/1.json
   def show
+      @user = User.new
   end
 
   # GET /assets/new
