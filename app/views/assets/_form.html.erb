@@ -1,4 +1,4 @@
-<%= form_for @asset, html: { id: "upload-form" } do |f| %>
+<%= form_for @asset, html: { id: "signup-form" } do |f| %>
   <% if @asset.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@asset.errors.count, "error") %> prohibited this asset from being saved:</h2>
@@ -12,11 +12,11 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :asset_title %><br>
+    <%= f.label "標題" %><br>
     <%= f.text_field :asset_title %>
   </div>
   <div class="field">
-    <%= f.label :asset %><br>
+    <%= f.label "檔案" %><br>
     <%= f.file_field :asset %>
     <% if f.object.asset_stored? %>
         <%= image_tag f.object.asset.url %>
@@ -24,6 +24,6 @@
     <% end %>
   </div>
   <div class="actions">
-    <%= f.submit "save" %>
+    <%= f.submit "上傳" %>
   </div>
 <% end %>

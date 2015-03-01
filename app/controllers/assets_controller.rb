@@ -30,7 +30,7 @@ class AssetsController < ApplicationController
 
     respond_to do |format|
       if @asset.save
-        format.html { redirect_to @asset, notice: 'Asset was successfully created.' }
+        format.html { redirect_to @asset, notice: '已上傳' }
         format.json { render :show, status: :created, location: @asset }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class AssetsController < ApplicationController
   def update
     respond_to do |format|
       if @asset.update(asset_params)
-        format.html { redirect_to @asset, notice: 'Asset was successfully updated.' }
+        format.html { redirect_to @asset, notice: '已更新' }
         format.json { render :show, status: :ok, location: @asset }
       else
         format.html { render :edit }
@@ -58,7 +58,7 @@ class AssetsController < ApplicationController
   def destroy
     @asset.destroy
     respond_to do |format|
-      format.html { redirect_to assets_url, notice: 'Asset was successfully destroyed.' }
+      format.html { redirect_to assets_url, notice: '上傳失敗' }
       format.json { head :no_content }
     end
   end
