@@ -1,6 +1,8 @@
 class PagesController < ApplicationController
     def index
         @user = User.new
+        @assets = Asset.all
+        @asset = Asset.new
     end
 
     def create
