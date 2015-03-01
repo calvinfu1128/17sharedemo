@@ -153,12 +153,12 @@ li {
     right: 10px;
 }
 
-.menu-btn i {
+.menu-btn i, .signup-btn, .login-btn, .upload-btn {
     z-index: 99;
     cursor: pointer;
 }
 
-.responsive-menu{
+.responsive-menu, .signup-form, .login-form, .upload-form {
     display: none;
     background: rgba(85,98,112,0.92);
     width: 100%;

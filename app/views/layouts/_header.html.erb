@@ -6,15 +6,165 @@
         <div class="top-bar-right">
             <ul>
               <% if current_user %>
-                <li><a href="/assets/new" id="upload">登記</a></li>
-                <li><%= link_to "上載", :upload, html: { id: "upload" } %></li>
-                <li><%= link_to "帳號", edit_user_path(current_user.id) %></li>
+                <li>
+                    <div class="upload-btn" id="upload-btn">上傳</div>
+                </li>
+                <div class="upload-form">
+                    <%= form_for @asset do |f| %>
+                      <% if @asset.errors.any? %>
+                        <div id="error_explanation">
+                          <h2><%= pluralize(@asset.errors.count, "error") %> prohibited this asset from being saved:</h2>
+
+                          <ul>
+                          <% @asset.errors.full_messages.each do |message| %>
+                            <li><%= message %></li>
+                          <% end %>
+                          </ul>
+                        </div>
+                      <% end %>
+
+                      <div class="field">
+                        <%= f.label "標題" %><br>
+                        <%= f.text_field :asset_title %>
+                      </div>
+                      <div class="field">
+                        <%= f.label "檔案" %><br>
+                        <%= f.file_field :asset %>
+                        <% if f.object.asset_stored? %>
+                            <%= image_tag f.object.asset.url %>
+                            <em>Current image</em>
+                        <% end %>
+                      </div>
+                      <div class="actions">
+                        <%= f.submit "上傳" %>
+                      </div>
+                    <% end %>
+                </div>
+                <li>
+                    <div class="signup-btn" id="signup-btn">帳號</div>
+                </li>
+                <div class="signup-form">
+                    <%= form_for @user, html: { id: "signup-form" } do |f| %>
+                      <% if @user.errors.any? %>
+                        <div id="error_explanation">
+                          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+                          <ul>
+                          <% @user.errors.full_messages.each do |message| %>
+                            <li><%= message %></li>
+                          <% end %>
+                          </ul>
+                        </div>
+                      <% end %>
+                      <div class="field">
+                        <%= f.label "姓" %><br>
+                        <%= f.text_field :last_name %>
+                      </div>
+                      <div class="field">
+                        <%= f.label "名" %><br>
+                        <%= f.text_field :first_name %>
+                      </div>
+                      <div class="field">
+                        <%= f.label "電郵" %><br>
+                        <%= f.text_field :email %>
+                      </div>
+                      <div class="field">
+                       <%= f.label "密碼" %><br />
+                       <%= f.password_field :password %>
+                      </div>
+                      <div class="field">
+                         <%= f.label "確認密碼" %><br />
+                         <%= f.password_field :password_confirmation %>
+                      </div>
+                      <% if logged_in? %>
+                          <div class="actions">
+                            <%= f.submit "修改" %>
+                          </div>
+                      <% else %>
+                          <div class="actions">
+                            <%= f.submit "登記" %>
+                          </div>
+                      <% end %>
+                    <% end %>
+
+                </div>
+                <!--<li><%= link_to "帳號", edit_user_path(current_user.id) %></li>-->
                 <li><%= link_to "登出", :logout, method: :post %></li>
               <% else %>
-                <!--<li><a href="#" id="signup">登記</a></li>
-                <li><a href="#" id="login">登入</a></li>-->
-                <li><%= link_to "登記", :signup, html: { id: "signup" } %></li>
-                <li><%= link_to "登入", :login, html: { id: "login" } %></li>
+                <li>
+                    <div class="signup-btn" id="signup-btn">登記</div>
+                </li>
+                <div class="signup-form">
+                    <%= form_for @user, html: { id: "signup-form" } do |f| %>
+                      <% if @user.errors.any? %>
+                        <div id="error_explanation">
+                          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+                          <ul>
+                          <% @user.errors.full_messages.each do |message| %>
+                            <li><%= message %></li>
+                          <% end %>
+                          </ul>
+                        </div>
+                      <% end %>
+                      <div class="field">
+                        <%= f.label "姓" %><br>
+                        <%= f.text_field :last_name %>
+                      </div>
+                      <div class="field">
+                        <%= f.label "名" %><br>
+                        <%= f.text_field :first_name %>
+                      </div>
+                      <div class="field">
+                        <%= f.label "電郵" %><br>
+                        <%= f.text_field :email %>
+                      </div>
+                      <div class="field">
+                       <%= f.label "密碼" %><br />
+                       <%= f.password_field :password %>
+                      </div>
+                      <div class="field">
+                         <%= f.label "確認密碼" %><br />
+                         <%= f.password_field :password_confirmation %>
+                      </div>
+                      <% if logged_in? %>
+                          <div class="actions">
+                            <%= f.submit "修改" %>
+                          </div>
+                      <% else %>
+                          <div class="actions">
+                            <%= f.submit "登記" %>
+                          </div>
+                      <% end %>
+
+                      <%= link_to 'Facebook登入', auth_at_provider_path(:provider => :facebook) %>
+                    <% end %>
+                </div>
+                <li>
+                    <div class="login-btn" id="login-btn">登入</div>
+                </li>
+                <div class="login-form">
+                    <%= form_tag user_sessions_path, :id => 'login-form', :method => :post do %>
+                      <div class="field">
+                        <%= label_tag "電郵" %><br />
+                        <%= text_field_tag :email %>
+                      </div>
+                      <div class="field">
+                        <%= label_tag "密碼" %><br />
+                        <%= password_field_tag :password %>
+                      </div>
+                      <div class="field">
+                        <%= check_box_tag :remember_me, 1, params[:remember_me] %>
+                        <%= label_tag "記住我" %>
+                      </div>
+                      <div class="actions">
+                        <%= submit_tag "登入" %>
+                      </div>
+                      <%= link_to 'Facebook登入', auth_at_provider_path(:provider => :facebook) %>
+                    <% end %>
+                </div>
+                <!--<li><%= link_to "登記", :signup, html: { id: "signup" } %></li>
+                <li><%= link_to "登入", :login, html: { id: "login" } %></li>-->
               <% end %>
             </ul>
         </div>
