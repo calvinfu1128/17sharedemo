@@ -18,6 +18,11 @@ img, embed, object, video {
     max-width: 100%;
 }
 
+/* for eliminating the 3px margin at the bottom */
+img {
+    vertical-align: middle;
+}
+
 a {
     text-decoration: none;
     color: #556270;
@@ -391,13 +396,5 @@ li {
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-    .photo-grid {
-        ul {
-            flex-direction: row;
-            flex-wrap: wrap;
-        }
-        li {
-            width: 33.3%;
-        }
-    }
+
 }
