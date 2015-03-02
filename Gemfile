@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 ruby "2.2.0"
 
+# Simple Form for form element
+gem 'simple_form', '~> 3.1.0'
+# Masonry for loading effect
+gem 'masonry-rails', '~> 0.2.4'
 # i18n internationalization support
 gem 'rails-i18n', '~> 4.0.4'
 # For Font Awesome display

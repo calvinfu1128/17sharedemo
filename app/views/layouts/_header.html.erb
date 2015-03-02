@@ -30,10 +30,6 @@
                       <div class="field">
                         <%= f.label "檔案" %><br>
                         <%= f.file_field :asset %>
-                        <% if f.object.asset_stored? %>
-                            <%= image_tag f.object.asset.url %>
-                            <em>Current image</em>
-                        <% end %>
                       </div>
                       <div class="actions">
                         <%= f.submit "上傳" %>
@@ -47,7 +43,7 @@
                     <div class="signup-btn" id="signup-btn">帳號</div>
                 </li>
                 <div class="signup-form">
-                    <%= form_for @user, html: { id: "signup-form" } do |f| %>
+                    <%= simple_form_for @user, html: { id: "signup-form" } do |f| %>
                       <% if @user.errors.any? %>
                         <div id="error_explanation">
                           <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -101,7 +97,7 @@
                     <div class="signup-btn" id="signup-btn">登記</div>
                 </li>
                 <div class="signup-form">
-                    <%= form_for @user, html: { id: "signup-form" } do |f| %>
+                    <%= simple_form_for @user, html: { id: "signup-form" } do |f| %>
                       <% if @user.errors.any? %>
                         <div id="error_explanation">
                           <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
