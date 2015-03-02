@@ -6,30 +6,30 @@ class AssetsController < ApplicationController
   def index
     @assets = Asset.all
     @asset = Asset.new
-    @user = User.new
+    @user = current_user
   end
 
   # GET /assets/1
   # GET /assets/1.json
   def show
-      @user = User.new
+    @user = current_user
   end
 
   # GET /assets/new
   def new
-    @asset = Asset.new
-    @user = User.new
+    @asset = current_user.assets.build
+    @user = current_user
   end
 
   # GET /assets/1/edit
   def edit
-    @user = User.new
+    @user = current_user
   end
 
   # POST /assets
   # POST /assets.json
   def create
-    @asset = Asset.new(asset_params)
+    @asset = current_user.assets.build(asset_params)
 
     respond_to do |format|
       if @asset.save

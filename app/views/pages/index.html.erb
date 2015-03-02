@@ -25,12 +25,13 @@
 </main>
 <div class="photo-grid">
     <div class="transition-enabled" id="assets">
-        <ul>
-            <% @assets.each do |asset| %>
-                <div class="box">
-                    <li><%= link_to image_tag(asset.asset.url), asset %></li>
+        <% @assets.each do |asset| %>
+            <div class="box">
+                <div>
+                    <%= link_to image_tag(asset.asset.url), asset %><br />
+                    <%= @asset.user %>
                 </div>
-            <% end %>
-        </ul>
+            </div>
+        <% end %>
     </div>
 </div>

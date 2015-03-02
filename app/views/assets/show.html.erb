@@ -1,9 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @asset.asset_title %>
-</p>
 <%= image_tag @asset.asset.thumb('300x300#').url if @asset.asset_stored? %>
 <%= link_to 'Edit', edit_asset_path(@asset) %> |
 <%= link_to 'Back', assets_path %>
+<p>
+  <strong>Title:</strong>
+  <%= @asset.asset_title %>
+  <%= @asset.user.first_name %>
+</p>
