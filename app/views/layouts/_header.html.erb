@@ -38,7 +38,7 @@
                         <%= button_tag "返回", type: 'button', class: 'close-upload-btn' %>
                       </div>
                     <% end %>
-                </div>
+                </div> <!-- end of upload form -->
                 <li>
                     <div class="signup-btn" id="signup-btn">帳號</div>
                 </li>
@@ -89,7 +89,7 @@
                       <% end %>
                     <% end %>
 
-                </div>
+                </div> <!-- end of edit form -->
                 <!--<li><%= link_to "帳號", edit_user_path(current_user.id) %></li>-->
                 <li><%= link_to "登出", :logout, method: :post %></li>
               <% else %>
@@ -144,7 +144,7 @@
 
                       <%= link_to 'Facebook登入', auth_at_provider_path(:provider => :facebook) %>
                     <% end %>
-                </div>
+                </div><!-- end of signup form -->
                 <li>
                     <div class="login-btn" id="login-btn">登入</div>
                 </li>
@@ -170,13 +170,13 @@
                       </div>
                       <%= link_to 'Facebook登入', auth_at_provider_path(:provider => :facebook) %>
                     <% end %>
-                </div>
+                </div> <!-- end of login form -->
                 <!--<li><%= link_to "登記", :signup, html: { id: "signup" } %></li>
                 <li><%= link_to "登入", :login, html: { id: "login" } %></li>-->
               <% end %>
             </ul>
-        </div>
-    </div>
+        </div><!-- end of top bar right -->
+    </div><!-- end of top bar -->
     <div class="navigation">
         <div class="logo-area">
             <div class="logo">
@@ -186,7 +186,7 @@
                 <%= link_to "17Share", root_path %>
             </div>
 
-        </div>
+        </div><!-- end of logo area -->
         <div class="mobile-nav menu">
              <div class="menu-btn" id="menu-btn">
                 <i class="fa fa-bars fa-2x"></i>
@@ -198,6 +198,6 @@
                    <a href="#" class="close-btn"><li>返回</li></a>
                 </ul>
              </div>
-        </div>
-    </div>
+        </div><!-- end of mobile nav menu -->
+    </div><!-- end of navigation -->
 </header>
